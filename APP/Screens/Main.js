@@ -9,7 +9,7 @@ import {
   WebView,
   StyleSheet
 } from 'react-native';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const WEBVIEW_REF = "webview";
 
@@ -61,25 +61,15 @@ renderBackBtn(){
     return (
       <View style={{flex: 1, flexDirection: 'row'}} >
 
-          <View style={{width: 20}} >
-          <TouchableOpacity
-            disabled={!this.state.backButtonEnabled}
+          <TouchableOpacity 
+          style={{flexDirection : 'row'}}
+           disabled={!this.state.backButtonEnabled}
             onPress={this.onBack.bind(this)}
-            >
-          <Image
-          style={{width: 20, height: 20, padding: 10}}
-          source={{uri: 'https://cdn4.iconfinder.com/data/icons/developer-set-3/128/left-20.png'}}
-        />
-</TouchableOpacity>
-        </View>
-        <View style={{width: 40}}>
-        <TouchableOpacity
-          disabled={!this.state.backButtonEnabled}
-          onPress={this.onBack.bind(this)}
           >
-          <Text>Back</Text>
+          <Icon name="angle-left" size={19} color="black" />
+          <Text style={{marginLeft : 8}}>Back</Text>
+          
           </TouchableOpacity>
-        </View>
 
       </View>
     );
